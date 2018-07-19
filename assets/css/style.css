@@ -1,0 +1,48 @@
+.jumbotron {
+    /* background-color: #e6c120; */
+    background-color: #557e99;
+}
+.header {
+    background-color: #25237c;
+    height: 90%;
+    width: 100%;
+}
+
+.header h1 {
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    font-family: 'Arial';
+}
+
+#userInput {
+    width: 175px;
+}
+
+.user-search {
+    margin-bottom: 10px;
+}
+
+
+.submitBtn {
+    border: 1px solid #000000
+} 
+
+.giphyDiv {
+    display: inline-block;
+    margin: 10px;
+}
+
+#person-btn {
+    margin: 5px;
+}
+
+@media (max-width: 400px) {
+    .giphy-header {
+        display: none;
+    }
+}
+/* @media (max-width: @screen-xs-max) { ... }
+
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) { ... }
+@media (min-width: @screen-lg-min) { ... } */
