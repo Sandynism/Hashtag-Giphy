@@ -1,11 +1,13 @@
 .jumbotron {
-    background: linear-gradient(to right, #557e99, #316385)
+    background-color: #557e99;
+    /* background: repeating-linear-gradient(#557e99, #133146); */
 }
 
 .header {
     /* background-color: #25237c; */
-    background: repeating-linear-gradient(#1e1b75, #383497, #8181be);
-    height: 90%;
+    background: linear-gradient(to right, #1e1b75, #383497, #8181be);
+    /* background: repeating-linear-gradient(#1e1b75, #383497, #8181be); */
+    height: 95%;
     width: 100%;
 }
 
@@ -15,6 +17,7 @@
     font-size: 60px;
     font-family: 'Rajdhani';
     letter-spacing: 8px;
+    padding-top: 5px;
 }
 
 #leftImg {
@@ -29,10 +32,12 @@
 
 #userInput {
     width: 175px;
+    margin-top: 10px;
+    margin-right: 3px;
 }
 
 .user-search {
-    margin-bottom: 10px;
+    margin-bottom: 17px;
 }
 
 .submitBtn {

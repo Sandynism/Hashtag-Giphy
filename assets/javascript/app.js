@@ -68,7 +68,11 @@ $("#submit-btn").on("click", function (event) {
 })
 
 // displayGifs function reacts to #person-btn on click
-$(document).on("click", "#person-btn", displayGifs)
+$(document).on("click", "#person-btn", displayGifs) 
+
+// $('#person-btn').on('click', function () {
+//     $('.giphyDiv').toggle()
+// })
 
 // plays and pauses gif animation
 $(document).on("click", ".gif", function () {
