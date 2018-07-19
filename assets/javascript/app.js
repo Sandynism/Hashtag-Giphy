@@ -1,5 +1,5 @@
 //topics
-let famousPeeps = ["bob ross", "yoda", "jimmy fallon", "avengers", "armin van buuren", "miyazaki", "tina fey", "chandler bing", "barack obama", "beyonce",]
+let famousPeeps = ["bob ross", "yoda", "jimmy fallon", "avengers", "armin van buuren", "miyazaki", "tina fey", "chandler bing", "barack obama", "beyonce"]
 
 // empties the giphys & buttons div 
 function renderButtons() {
