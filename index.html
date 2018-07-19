@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Bree+Serif|Rajdhani|Unica+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Rajdhani|Unica+One" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
     <title>#GIPHY</title>
@@ -14,8 +15,9 @@
 
     <div class="jumbotron">
         <header class="header text-center">
-            <h1>GIFS @ SANDYNISM</h1>
-            <!-- <iframe src="https://giphy.com/embed/3ohhwBBVQlsM0w7cFq" width="180" height="180" frameBorder="0" class="giphy-embed giphy-header" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/kawaii-3ohhwBBVQlsM0w7cFq"></a></p> -->
+            <img id="leftImg" src="assets/images/tv.gif">
+            <img id="rightImg" src="assets/images/tv.gif">
+            <h1><i class="fas fa-bomb"></i> DOT COM</h1>
             <form class="user-search text-center">
                 <input type="text" id="userInput" placeholder="Search for cool peeps">
                 <button type="submit" id="submit-btn" class="btn btn-primary">Submit</button>
@@ -27,7 +29,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <p class="text-center">SELECT A BUTTON & CLICK THE GIFS TO SEE IT IN ACTION</p>
+                <p class="text-center">SELECT A BUTTON <i class="far fa-hand-point-down"></i> TO CLICK THE GIFS & SEE IT IN ACTION</p>
                 <div id="giphys-buttons"></div>
                     <!-- BUTTONS -->
                 <div id="giphys"></div>

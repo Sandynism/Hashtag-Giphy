@@ -1,3 +1,4 @@
+//topics
 let famousPeeps = ["bob ross", "yoda", "jimmy fallon", "avengers", "armin van buuren", "miyazaki", "tina fey", "chandler bing", "barack obama", "beyonce",]
 
 // empties the giphys & buttons div 
@@ -21,8 +22,8 @@ function displayGifs() {
     let searchParam = $(this).attr("name")
     console.log(searchParam)
 
-    let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searchParam + "&api_key=ha6q5j8JlwlgQ0fuy8PzOQ8A5hsYI8wU" + "&limit=8"
-    // let queryURL = "https://api.giphy.com/v1/gifs/search?q=simpsons&api_key=ha6q5j8JlwlgQ0fuy8PzOQ8A5hsYI8wU&limit=5"
+    let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searchParam + "&api_key=ha6q5j8JlwlgQ0fuy8PzOQ8A5hsYI8wU" + "&limit=10"
+    // let testerqueryURL = "https://api.giphy.com/v1/gifs/search?q=simpsons&api_key=ha6q5j8JlwlgQ0fuy8PzOQ8A5hsYI8wU&limit=5"
 
     // ajax call to giphy
     $.ajax({
@@ -53,9 +54,9 @@ function displayGifs() {
             // places the giphyDiv at the top of the giphys div
             $("#giphys").prepend(giphyDiv)
         }
-    }) 
+    })
 }
-//response.data[i].images.fixed_height.mp4 to download gif
+//response.data[i].images.fixed_height.url to download gif
 
 // on submit, the userInput value is pushed into the famousPeeps array & previous array is cleared
 $("#submit-btn").on("click", function (event) {
