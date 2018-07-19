@@ -11,8 +11,10 @@
 .header h1 {
     text-align: center;
     color: white;
-    font-size: 40px;
-    font-family: 'Arial';
+    font-size: 60px;
+    /* font-family: 'Bree Serif'; */
+    font-family: 'Rajdhani';
+    letter-spacing: 8px;
 }
 
 #userInput {
@@ -34,9 +36,18 @@
 }
 
 #person-btn {
-    margin: 5px;
+    margin: 3px;
+    font-family: 'Bree Serif';
 }
 
+body {
+    font-family: 'Bree Serif'; 
+}
+
+p {
+    font-family: 'Unica One';
+    font-size: 20px;
+}
 @media (max-width: 400px) {
     .giphy-header {
         display: none;

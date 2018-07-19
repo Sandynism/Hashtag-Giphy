@@ -1,6 +1,6 @@
 let famousPeeps = ["bob ross", "yoda", "jimmy fallon", "avengers", "armin van buuren", "miyazaki", "tina fey", "chandler bing", "barack obama", "beyonce",]
 
-// empties the giphys div 
+// empties the giphys & buttons div 
 function renderButtons() {
     $("#giphys-buttons").empty()
     $("#giphys").empty()
@@ -9,7 +9,7 @@ function renderButtons() {
     for (let i = 0; i < famousPeeps.length; i++) {
         let button = $("<button>")
         button.html(famousPeeps[i])
-        button.addClass("btn btn-outline-secondary")
+        button.addClass("btn btn-warning")
         button.attr("id", "person-btn")
         button.attr("name", famousPeeps[i])
         $("#giphys-buttons").append(button)
@@ -22,7 +22,7 @@ function displayGifs() {
     console.log(searchParam)
 
     let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searchParam + "&api_key=ha6q5j8JlwlgQ0fuy8PzOQ8A5hsYI8wU" + "&limit=8"
-    // var queryURL = "https://api.giphy.com/v1/gifs/search?q=simpsons&api_key=ha6q5j8JlwlgQ0fuy8PzOQ8A5hsYI8wU&limit=5"
+    // let queryURL = "https://api.giphy.com/v1/gifs/search?q=simpsons&api_key=ha6q5j8JlwlgQ0fuy8PzOQ8A5hsYI8wU&limit=5"
 
     // ajax call to giphy
     $.ajax({
@@ -40,7 +40,7 @@ function displayGifs() {
             let p = $("<p>").html("Rated: " + rating)
             p.addClass("text-center")
 
-            var gif = $("<img>")
+            let gif = $("<img>")
             gif.addClass("gif")
             gif.attr("src", response.data[i].images.fixed_height_still.url)
             gif.attr("data-still", response.data[i].images.fixed_height_still.url)
@@ -55,6 +55,7 @@ function displayGifs() {
         }
     }) 
 }
+//response.data[i].images.fixed_height.mp4 to download gif
 
 // on submit, the userInput value is pushed into the famousPeeps array & previous array is cleared
 $("#submit-btn").on("click", function (event) {
