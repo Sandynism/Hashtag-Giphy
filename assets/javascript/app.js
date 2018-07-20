@@ -31,22 +31,36 @@ function displayGifs() {
         method: "GET"
     }).done(function (response) {
         console.log(response)
+        let item = response.data
 
         // creates a still image gif 
-        for (let i = 0; i < response.data.length; i++) {
+        for (let i = 0; i < item.length; i++) {
             let giphyDiv = $("<div>")
             giphyDiv.addClass("giphyDiv")
             //adds rating for gif
-            let rating = response.data[i].rating
+            let rating = item[i].rating
             let p = $("<p>").html("Rated: " + rating)
             p.addClass("text-center")
 
+            let stillImg = item[i].images.fixed_height_still.url
+            let animatedImg = item[i].images.fixed_height.url
+            
             let gif = $("<img>")
             gif.addClass("gif")
-            gif.attr("src", response.data[i].images.fixed_height_still.url)
-            gif.attr("data-still", response.data[i].images.fixed_height_still.url)
-            gif.attr("data-animate", response.data[i].images.fixed_height.url)
+            gif.attr("src", stillImg)
+            gif.attr("data-still", stillImg)
+            gif.attr("data-animate", animatedImg)
             gif.attr("data-state", "still")
+
+            // let dlBtn = ("<button>")
+            // dlBtn.attr("href", still)
+            // dlBtn.download = 
+            // gif.attr("href", response.data[i].images.fixed_height_still.url)
+            // gif.attr("download", true)
+            // let a = $("<a>")
+            // a.attr("href", gif.src)
+            // a.download = searchParam
+            // a.append(gif)
 
             giphyDiv.append(p)
             giphyDiv.prepend(gif)
@@ -68,7 +82,7 @@ $("#submit-btn").on("click", function (event) {
 })
 
 // displayGifs function reacts to #person-btn on click
-$(document).on("click", "#person-btn", displayGifs) 
+$(document).on("click", "#person-btn", displayGifs)
 
 // $('#person-btn').on('click', function () {
 //     $('.giphyDiv').toggle()
