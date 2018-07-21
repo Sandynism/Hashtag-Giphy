@@ -22,7 +22,8 @@ function displayGifs() {
     let searchParam = $(this).attr("name")
     console.log(searchParam)
 
-    let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searchParam + "&api_key=ha6q5j8JlwlgQ0fuy8PzOQ8A5hsYI8wU" + "&limit=10"
+    let apiKey = "ha6q5j8JlwlgQ0fuy8PzOQ8A5hsYI8wU"
+    let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searchParam + "&api_key=" + apiKey + "&limit=10"
     // let testerqueryURL = "https://api.giphy.com/v1/gifs/search?q=simpsons&api_key=ha6q5j8JlwlgQ0fuy8PzOQ8A5hsYI8wU&limit=5"
 
     // ajax call to giphy
@@ -44,7 +45,6 @@ function displayGifs() {
 
             let stillImg = item[i].images.fixed_height_still.url
             let animatedImg = item[i].images.fixed_height.url
-            
             let gif = $("<img>")
             gif.addClass("gif")
             gif.attr("src", stillImg)
