@@ -61,6 +61,7 @@ function displayGifs() {
             // a.attr("href", gif.src)
             // a.download = searchParam
             // a.append(gif)
+            //chrome does not allow .download()
 
             giphyDiv.append(p)
             giphyDiv.prepend(gif)
@@ -70,7 +71,6 @@ function displayGifs() {
         }
     })
 }
-//response.data[i].images.fixed_height.url to download gif
 
 // on submit, the userInput value is pushed into the famousPeeps array & previous array is cleared
 $("#submit-btn").on("click", function (event) {
@@ -78,7 +78,9 @@ $("#submit-btn").on("click", function (event) {
 
     let newPeep = $("#userInput").val().trim()
     famousPeeps.push(newPeep)
+
     renderButtons()
+    $('#userInput').val('');
 })
 
 // displayGifs function reacts to #person-btn on click
@@ -103,5 +105,51 @@ $(document).on("click", ".gif", function () {
 
 renderButtons()
 
+
+
+
+// cannot stop repeated calls when scroll is at the bottom
+// $(window).scroll(function () {
+//     if ($(window).scrollTop() + $(window).height() >= $(document).height()) {
+//         //    ajaxcall
+//         let searchParam = $(this).attr("name")
+//         let apiKey = "ha6q5j8JlwlgQ0fuy8PzOQ8A5hsYI8wU"
+//         let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searchParam + "&api_key=" + apiKey + "&limit=20"
+//         // ajax call to giphy
+//         $.ajax({
+//             url: queryURL,
+//             method: "GET"
+//         }).done(function (response) {
+//             console.log(response.data)
+//             let item = response.data
+
+//             // creates a still image gif 
+//             for (let i = 0; i < item.length; i++) {
+//                 let giphyDiv = $("<div>")
+//                 giphyDiv.addClass("giphyDiv")
+//                 //adds rating for gif
+//                 let rating = item[i].rating
+//                 let p = $("<p>").html("Rated: " + rating)
+//                 p.addClass("text-center")
+
+//                 let stillImg = item[i].images.fixed_height_still.url
+//                 let animatedImg = item[i].images.fixed_height.url
+//                 let gif = $("<img>")
+//                 gif.addClass("gif")
+//                 gif.attr("src", stillImg)
+//                 gif.attr("data-still", stillImg)
+//                 gif.attr("data-animate", animatedImg)
+//                 gif.attr("data-state", "still")
+
+//                 giphyDiv.append(p)
+//                 giphyDiv.prepend(gif)
+
+//                 // places the giphyDiv at the top of the giphys div
+//                 $("#giphys").prepend(giphyDiv)
+//             }
+//         })
+
+//     }
+// })
 
 
