@@ -1,4 +1,5 @@
 //topics
+let audio = new Audio("assets/audio/onclick.wav")
 let famousPeeps = ["bob ross", "yoda", "jimmy fallon", "avengers", "armin van buuren", "miyazaki", "tina fey", "chandler bing", "barack obama", "beyonce"]
 
 // empties the giphys & buttons div 
@@ -18,6 +19,7 @@ function renderButtons() {
 }
 
 function displayGifs() {
+    audio.play()
     renderButtons()
     let searchParam = $(this).attr("name")
     console.log(searchParam)
@@ -84,7 +86,7 @@ $("#submit-btn").on("click", function (event) {
 })
 
 // displayGifs function reacts to #person-btn on click
-$(document).on("click", "#person-btn", displayGifs)
+$(document).on("click", "#person-btn", displayGifs) 
 
 // $('#person-btn').on('click', function () {
 //     $('.giphyDiv').toggle()
